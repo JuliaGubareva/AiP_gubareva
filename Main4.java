@@ -239,5 +239,25 @@ public class Main4 {
         tree.inOrder(tree.root, inOrderResult);
         System.out.println(inOrderResult);
         
+        //построение бинарого дерева поиска(BST)
+        BinaryTree bstTree = new BinaryTree();
+        int[] values = {7, 3, 9, 1, 5, 8, 10};
+        for (int value : values) {
+            bstTree.root = bstTree.insertBST(bstTree.root, value);
+        }
+        System.out.println("Центрированный обход BST:");
+        inOrderResult.clear();
+        bstTree.inOrder(bstTree.root, inOrderResult);
+        System.out.println(inOrderResult);
+
+        //построение сбалансрованного бинарного дерева из отсортированного массива
+        int[] sortedArray = {1, 2, 3, 5, 6, 7, 9};
+        BinaryTree balancedTree = new BinaryTree();
+        balancedTree.root = balancedTree.sortedArrayToBST(sortedArray, 0, sortedArray.length - 1);
+        System.out.println("Центрированный обход сбалансированного дерева:");
+        inOrderResult.clear();
+        balancedTree.inOrder(balancedTree.root, inOrderResult);
+        System.out.println(inOrderResult);
+
     }
 }
